@@ -12,7 +12,7 @@ const ME = {
   role: 'Full Stack Developer',
   degree: 'B.Tech CSE (AIML) · KIET · 2029',
   location: 'Delhi NCR, IN',
-  bio: "I'm a 2nd-year CSE undergrad who builds things — real things. From AI deepfake detectors to healthcare ecosystems to MSME compliance platforms. I vibe-code fast, learn faster, and ship.",
+  bio: "I'm a 1st-year CSE undergrad who builds things — real things. From AI deepfake detectors to healthcare ecosystems to MSME compliance platforms. I vibe-code fast, learn faster, and ship.",
   github: 'https://github.com/Doremon-tech-svg',
   linkedin: 'https://www.linkedin.com/in/divyank-richhariya-97508b382',
   twitter: 'https://x.com/DivyankRic82579',
