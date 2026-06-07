@@ -451,7 +451,7 @@ function Hero({ theme }) {
         }}
       >
         <img
-          src="public/avatar.jpeg"
+          src="/avatar.jpeg"
           alt={ME.name}
           style={{ width: '100%', height: '100%', objectFit: 'cover' }}
         />
