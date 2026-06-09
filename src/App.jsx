@@ -12,7 +12,7 @@ const ME = {
   role: 'Full Stack Developer',
   degree: 'B.Tech CSE (AIML) · KIET · 2029',
   location: 'Delhi NCR, IN',
-  bio: "I'm a 2nd-year CSE undergrad who builds things — real things. From AI deepfake detectors to healthcare ecosystems to MSME compliance platforms. I vibe-code fast, learn faster, and ship.",
+  bio: "I'm a 1st-year CSE undergrad who builds things — real things. From AI deepfake detectors to healthcare ecosystems to MSME compliance platforms. I vibe-code fast, learn faster, and ship.",
   github: 'https://github.com/Doremon-tech-svg',
   linkedin: 'https://www.linkedin.com/in/divyank-richhariya-97508b382',
   twitter: 'https://x.com/DivyankRic82579',
@@ -451,7 +451,7 @@ function Hero({ theme }) {
         }}
       >
         <img
-          src="public/avatar.jpeg"
+          src="/avatar.jpeg"
           alt={ME.name}
           style={{ width: '100%', height: '100%', objectFit: 'cover' }}
         />
@@ -514,7 +514,7 @@ function About() {
       <div className="g1" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, marginTop: 48 }}>
         <div>
           <p style={{ fontSize: 14, color: 'var(--muted)', lineHeight: 1.95, marginBottom: 24 }}>
-            I'm Divyank — a 2nd year B.Tech CSE (AIML) student at KIET Group of Institutions, Delhi NCR. I build things on the internet. Started with basic HTML, now shipping full-stack AI apps with blockchain security and ML inference.
+            I'm Divyank — a 1st year B.Tech CSE (AIML) student at KIET Group of Institutions, Delhi NCR. I build things on the internet. Started with basic HTML, now shipping full-stack AI apps with blockchain security and ML inference.
           </p>
           <p style={{ fontSize: 14, color: 'var(--muted)', lineHeight: 1.95, marginBottom: 24 }}>
             I vibe-code fast, ship often, and learn by doing. Most of my stack is self-taught through projects. Currently deep in backend architecture, distributed systems thinking, and actually understanding the math behind the models I use.
@@ -1016,7 +1016,44 @@ function GamesSection({ theme }) {
 function Contact() {
   const [st, setSt] = useState('idle');
   const [val, setVal] = useState('');
-  const send = () => { if (!val.trim()) return; setSt('sending'); setTimeout(() => setSt('sent'), 1200); };
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+
+  const send = async () => {
+    if (!val.trim()) return;
+    setSt('sending');
+
+    try {
+      // Wait for emailjs to be available (CDN load timing)
+      if (!window.emailjs) {
+        throw new Error('EmailJS not loaded');
+      }
+
+      // Initialize with your public key (v4 syntax)
+      window.emailjs.init({
+        publicKey: 'ZL76fbUH-koHqZrBn',   // ← WITHOUT the "user_" prefix
+      });
+
+      const result = await window.emailjs.send(
+        'service_f27isgh',
+        'template_8we44gr',
+        {
+          from_name: name || 'Anonymous',
+          reply_to: email || 'no-reply@portfolio.com',
+          message: val,
+          to_name: 'Divyank',
+        }
+        // No 4th argument in v4 — key is passed via init() above
+      );
+
+      console.log('EmailJS success:', result);
+      setSt('sent');
+    } catch (err) {
+      console.error('EmailJS error:', err);
+      setSt('error');
+    }
+  };
+
   return (
     <section id="contact" style={{ padding: '120px 10% 80px', position: 'relative', zIndex: 10 }}>
       <SL>06 / CONTACT FLOOR</SL>
@@ -1024,23 +1061,69 @@ function Contact() {
       <div style={{ marginTop: 48, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48 }} className="g1">
         <div>
           <p style={{ fontSize: 14, color: 'var(--muted)', lineHeight: 1.9, marginBottom: 28 }}>Open to collabs, hackathon teams, freelance projects, internships, or just geeking out about AI/Web3. I reply within 24h.</p>
-          {[{ l: 'EMAIL', v: ME.email, href: `mailto:${ME.email}` }, { l: 'GITHUB', v: 'github.com/Doremon-tech-svg', href: ME.github }, { l: 'LINKEDIN', v: 'divyank-richhariya', href: ME.linkedin }, { l: 'TWITTER/X', v: '@DivyankRic82579', href: ME.twitter }, { l: 'MEDIUM', v: 'medium.com/@richhariyadivyank1', href: ME.medium }, { l: 'LOCATION', v: ME.location, href: null }].map(item => (
-            <div key={item.l} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 0', borderBottom: '1px solid var(--border)', fontFamily: 'JetBrains Mono,monospace', fontSize: 9, letterSpacing: '.1em', transition: 'border-color .4s' }}>
+          {[
+            { l: 'EMAIL', v: ME.email, href: `mailto:${ME.email}` },
+            { l: 'GITHUB', v: 'github.com/Doremon-tech-svg', href: ME.github },
+            { l: 'LINKEDIN', v: 'divyank-richhariya', href: ME.linkedin },
+            { l: 'TWITTER/X', v: '@DivyankRic82579', href: ME.twitter },
+            { l: 'MEDIUM', v: 'medium.com/@richhariyadivyank1', href: ME.medium },
+            { l: 'LOCATION', v: ME.location, href: null }
+          ].map(item => (
+            <div key={item.l} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 0', borderBottom: '1px solid var(--border)', fontFamily: 'JetBrains Mono,monospace', fontSize: 9, letterSpacing: '.1em' }}>
               <span style={{ color: 'var(--dim)' }}>{item.l}</span>
-              {item.href ? <a href={item.href} target="_blank" rel="noreferrer" style={{ color: 'var(--muted)', textDecoration: 'none', transition: 'color .2s' }} onMouseEnter={e => e.target.style.color = 'var(--a2)'} onMouseLeave={e => e.target.style.color = 'var(--muted)'}>{item.v}</a> : <span style={{ color: 'var(--muted)' }}>{item.v}</span>}
+              {item.href
+                ? <a href={item.href} target="_blank" rel="noreferrer" style={{ color: 'var(--muted)', textDecoration: 'none' }} onMouseEnter={e => e.target.style.color = 'var(--a2)'} onMouseLeave={e => e.target.style.color = 'var(--muted)'}>{item.v}</a>
+                : <span style={{ color: 'var(--muted)' }}>{item.v}</span>}
             </div>
           ))}
         </div>
-        <div style={{ border: '1px solid var(--border)', padding: 26, background: 'var(--card)', display: 'flex', flexDirection: 'column', gap: 14, transition: 'background .4s,border-color .4s' }}>
+
+        <div style={{ border: '1px solid var(--border)', padding: 26, background: 'var(--card)', display: 'flex', flexDirection: 'column', gap: 14 }}>
           <div style={{ fontFamily: 'JetBrains Mono,monospace', fontSize: 8, color: 'var(--a3)', letterSpacing: '.15em' }}>QUICK MESSAGE</div>
+
           {st !== 'sent' ? <>
-            <textarea value={val} onChange={e => setVal(e.target.value)} placeholder="What are you building?" style={{ background: 'var(--bg)', border: '1px solid var(--border2)', color: 'var(--text)', fontFamily: 'JetBrains Mono,monospace', fontSize: 12, padding: 13, resize: 'none', height: 110, outline: 'none', lineHeight: 1.7, transition: 'border-color .2s,background .4s' }} onFocus={e => e.target.style.borderColor = 'var(--accent)'} onBlur={e => e.target.style.borderColor = 'var(--border2)'} />
-            <button onClick={send} style={{ padding: 11, background: 'var(--accent)', color: '#fff', border: 'none', cursor: 'none', fontFamily: 'JetBrains Mono,monospace', fontSize: 10, letterSpacing: '.1em', fontWeight: 500, opacity: st === 'sending' ? .7 : 1, transition: 'opacity .2s,background .4s' }}>{st === 'sending' ? 'SENDING...' : 'SEND →'}</button>
-          </> : <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 8, padding: 18, textAlign: 'center' }}>
-            <div style={{ fontSize: 26 }}>✓</div>
-            <div style={{ fontFamily: 'JetBrains Mono,monospace', fontSize: 10, color: 'var(--green)', letterSpacing: '.1em' }}>MESSAGE RECEIVED</div>
-            <div style={{ fontSize: 12, color: 'var(--muted)' }}>Reply within 24h</div>
-          </div>}
+            <input
+              value={name}
+              onChange={e => setName(e.target.value)}
+              placeholder="Your name"
+              style={{ background: 'var(--bg)', border: '1px solid var(--border2)', color: 'var(--text)', fontFamily: 'JetBrains Mono,monospace', fontSize: 12, padding: 13, outline: 'none' }}
+              onFocus={e => e.target.style.borderColor = 'var(--accent)'}
+              onBlur={e => e.target.style.borderColor = 'var(--border2)'}
+            />
+            <input
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+              placeholder="Your email (so I can reply)"
+              style={{ background: 'var(--bg)', border: '1px solid var(--border2)', color: 'var(--text)', fontFamily: 'JetBrains Mono,monospace', fontSize: 12, padding: 13, outline: 'none' }}
+              onFocus={e => e.target.style.borderColor = 'var(--accent)'}
+              onBlur={e => e.target.style.borderColor = 'var(--border2)'}
+            />
+            <textarea
+              value={val}
+              onChange={e => setVal(e.target.value)}
+              placeholder="What are you building?"
+              style={{ background: 'var(--bg)', border: '1px solid var(--border2)', color: 'var(--text)', fontFamily: 'JetBrains Mono,monospace', fontSize: 12, padding: 13, resize: 'none', height: 110, outline: 'none', lineHeight: 1.7 }}
+              onFocus={e => e.target.style.borderColor = 'var(--accent)'}
+              onBlur={e => e.target.style.borderColor = 'var(--border2)'}
+            />
+            {st === 'error' && (
+              <div style={{ fontFamily: 'JetBrains Mono,monospace', fontSize: 9, color: 'var(--red)', letterSpacing: '.1em' }}>
+                ✗ SEND FAILED — try emailing directly
+              </div>
+            )}
+            <button
+              onClick={send}
+              style={{ padding: 11, background: 'var(--accent)', color: '#fff', border: 'none', cursor: 'none', fontFamily: 'JetBrains Mono,monospace', fontSize: 10, letterSpacing: '.1em', fontWeight: 500, opacity: st === 'sending' ? 0.7 : 1 }}
+            >
+              {st === 'sending' ? 'SENDING...' : 'SEND →'}
+            </button>
+          </> : (
+            <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 8, padding: 18, textAlign: 'center' }}>
+              <div style={{ fontSize: 26 }}>✓</div>
+              <div style={{ fontFamily: 'JetBrains Mono,monospace', fontSize: 10, color: 'var(--green)', letterSpacing: '.1em' }}>MESSAGE RECEIVED</div>
+              <div style={{ fontSize: 12, color: 'var(--muted)' }}>Reply within 24h</div>
+            </div>
+          )}
         </div>
       </div>
     </section>
