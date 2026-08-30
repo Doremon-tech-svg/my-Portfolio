@@ -25,7 +25,7 @@ D3.js — force-directed skill graph
 EmailJS — contact form send
 ```
 
-No CSS framework. Inline styles + CSS vars for theming.
+Tailwind css. Inline styles + CSS vars for theming.
 
 ## Setup
 
