@@ -1,4 +1,4 @@
-# Nexus Portfolio
+# my-Portfolio
 
 Personal portfolio site. Built React + Framer Motion + D3. Not template — custom loading screen, cursor, 3 themes (dark/light/x-ray), interactive tech graph, 5 mini-games, live terminal.
 
@@ -57,9 +57,9 @@ App (root)           → wires sections + loading state
 
 - Edit `ME` object top of file: name, bio, links
 - `PROJECTS` array: each entry = name, tags, desc, tech, live/gh links, x-ray node map
-- `STATS`, `GOALS`, `NODES`/`LINKS` (tech graph) — swap for your own numbers
-- Music player expects mp3s at `/music/*.mp3` — swap or remove component if unused
+- `STATS`, `GOALS`, `NODES`/`LINKS` (tech graph) 
+- Music player expects mp3s at `/music/*.mp3` 
 
 ## License
 
-MIT (or your choice)
+MIT 
