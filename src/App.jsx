@@ -9,10 +9,10 @@ const ME = {
   name: 'Divyank Richhariya',
   displayFirst: 'Divyank',
   displayHandle: 'divyank.',
-  role: 'Full Stack Developer',
+  role: 'Full-Stack Developer (PERN)',
   degree: 'B.Tech CSE (AIML) · KIET · 2029',
   location: 'Delhi NCR, IN',
-  bio: "I'm a 1st-year CSE undergrad who builds things — real things. From AI deepfake detectors to healthcare ecosystems to MSME compliance platforms. I vibe-code fast, learn faster, and ship.",
+  bio: "I build full-stack apps, mostly PERN: PostgreSQL, Express, React, Node.js. Backend is where I spend most of my time, multi-tenant systems, REST APIs, database design. I've shipped a hospital platform, an assistive navigation app, and a blockchain-verified deepfake detector, and I'm currently picking up Solidity on the side.",
   github: 'https://github.com/Doremon-tech-svg',
   linkedin: 'https://www.linkedin.com/in/divyank-richhariya-97508b382',
   twitter: 'https://x.com/DivyankRic82579',
@@ -146,7 +146,7 @@ function LoadingScreen({ onDone }) {
             <div style={{ fontSize: 26, fontFamily: 'Syne,sans-serif', fontWeight: 800, color: '#F9FAFB', marginBottom: 4, letterSpacing: '-.02em' }}>
               divyank<span style={{ color: '#7C3AED' }}>.</span>
             </div>
-            <div style={{ fontSize: 9, color: '#374151', letterSpacing: '.2em', marginBottom: 36 }}>FULL STACK DEV · AI TINKERER · 2029</div>
+            <div style={{ fontSize: 9, color: '#374151', letterSpacing: '.2em', marginBottom: 36 }}>FULL STACK DEV · PERN · 2029</div>
             <div style={{ textAlign: 'left', background: 'rgba(124,58,237,.05)', border: '1px solid rgba(124,58,237,.2)', padding: '14px 18px', marginBottom: 24, minHeight: 110 }}>
               {lines.map((l, i) => (
                 <motion.div key={i} initial={{ opacity: 0, x: -8 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: .2 }}
@@ -500,12 +500,12 @@ function Hero({ theme }) {
    ABOUT
 ═══════════════════════════════════════════════════ */
 function About() {
-  const skills = ['Python', 'Flask', 'SQLite', 'SQL', 'React', 'JavaScript', 'HTML/CSS', 'C', 'C++', 'Git', 'MongoDB (learning)', 'Node.js (learning)', 'Express (learning)', 'Solidity (learning)'];
-  const learning = ['Node.js + Express', 'Solidity & Web3', 'System Design', 'DSA seriously', 'Blockchain internals'];
+  const skills = ['Node.js', 'Express', 'PostgreSQL', 'React', 'JavaScript', 'TypeScript', 'Prisma ORM', 'MySQL', 'MongoDB', 'SQLite', 'Tailwind CSS', 'Docker', 'Git', 'Python', 'Flask', 'Solidity (learning)'];
+  const learning = ['Solidity & Ethereum', 'System Design', 'DSA seriously', 'Smart contract internals'];
   const clubs = [
-    { name: 'CoE AI Skills Lab — KIET', role: 'Blockchain Member', active: true },
-    { name: 'GDG on Campus — KIET', role: 'ML Member', active: true },
-    { name: 'DevUp — KIET', role: 'Web Dev Member', active: true },
+    { name: 'GDG on Campus — KIET', role: 'ML Domain Member', active: true },
+    { name: 'DevUp — KIET', role: 'ML Domain Member', active: true },
+    { name: 'GSSoC', role: 'Open Source Contributor', active: true },
   ];
   return (
     <section id="about" style={{ padding: '120px 10%', position: 'relative', zIndex: 10 }}>
@@ -514,13 +514,13 @@ function About() {
       <div className="g1" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, marginTop: 48 }}>
         <div>
           <p style={{ fontSize: 14, color: 'var(--muted)', lineHeight: 1.95, marginBottom: 24 }}>
-            I'm Divyank — a 1st year B.Tech CSE (AIML) student at KIET Group of Institutions, Delhi NCR. I build things on the internet. Started with basic HTML, now shipping full-stack AI apps with blockchain security and ML inference.
+            I'm Divyank, a B.Tech CSE (AIML) student at KIET Group of Institutions, Delhi NCR. I build full-stack apps, mostly PERN, with backend as my main focus: multi-tenant systems, REST APIs, database design, auth.
           </p>
           <p style={{ fontSize: 14, color: 'var(--muted)', lineHeight: 1.95, marginBottom: 24 }}>
-            I vibe-code fast, ship often, and learn by doing. Most of my stack is self-taught through projects. Currently deep in backend architecture, distributed systems thinking, and actually understanding the math behind the models I use.
+            Most of my stack is self-taught through projects. A lot of what I build ends up wiring an AI layer straight into the backend instead of keeping it separate. I'm also picking up Solidity and blockchain fundamentals on the side, still early there, not claiming expertise.
           </p>
           <p style={{ fontSize: 14, color: 'var(--muted)', lineHeight: 1.95 }}>
-            Top 10 at CodeWizards Hackathon (100+ teams). Qualified final round at Dataverse. GSSoC contributor. 5–6 hackathons and counting.
+            Recognized as top project at KIET's AI + Blockchain Bootcamp. Open-source contributor through GSSoC. AWS Certified AI Practitioner.
           </p>
           <div style={{ marginTop: 28 }}>
             <div style={{ fontFamily: 'JetBrains Mono,monospace', fontSize: 9, color: 'var(--muted)', letterSpacing: '.15em', marginBottom: 14 }}>COLLEGE CLUBS</div>
@@ -561,8 +561,8 @@ function About() {
    STATS
 ═══════════════════════════════════════════════════ */
 const STATS = [
-  { v: '14+', l: 'Projects Shipped', icon: '◈' }, { v: '5+', l: 'Hackathons', icon: '⚡' },
-  { v: 'Top 10', l: 'CodeWizards (100+ teams)', icon: '◎' }, { v: 'GSSoC', l: 'Open Source Contributor', icon: '◆' },
+  { v: '4', l: 'Resume Projects', icon: '◈' }, { v: 'GSSoC', l: 'Open Source Contributor', icon: '⚡' },
+  { v: 'Top Project', l: 'KIET AI + Blockchain Bootcamp', icon: '◎' }, { v: 'AWS', l: 'Certified AI Practitioner', icon: '◆' },
   { v: '3', l: 'College Clubs', icon: '▲' }, { v: '2029', l: 'Graduation Year', icon: '◌' },
 ];
 function Stats() {
@@ -587,16 +587,18 @@ function Stats() {
    PROJECTS
 ═══════════════════════════════════════════════════ */
 const PROJECTS = [
-  { id: '01', name: 'AI HealthMate', tag: 'HACKATHON', status: 'live', desc: 'Unified AI health platform: diabetes ML prediction (XGBoost) + mental health assessment. Firebase auth, FastAPI backend, Recharts dashboards. Built for hackathon with real-world relevance.', tech: ['React', 'FastAPI', 'Firebase', 'Scikit-learn', 'TailwindCSS', 'Framer Motion'], stat: 'ML + Mental Health unified', color: '#10B981', link: 'https://ai-healthmate.vercel.app/', gh: 'https://github.com/Doremon-tech-svg/ai-healthmate', xray: { type: 'full-stack', nodes: ['React UI', 'Firebase Auth', 'FastAPI', 'XGBoost', 'Firestore', 'Charts'] } },
-  { id: '02', name: 'ComplianceOS', tag: 'FLAGSHIP', status: 'live', desc: 'AI-powered platform for 6.3 crore Indian MSMEs. 5 AI agents (ARIA, VEDA, SCOUT, PATHWAY, SENTINEL) for compliance, scheme discovery, document OCR, portal navigation. Multi-agent LLM orchestration.', tech: ['React', 'FastAPI', 'PostgreSQL', 'MongoDB', 'Redis', 'Groq LLM', 'Razorpay'], stat: '5 AI agents · MSME platform', color: '#7C3AED', link: '#', gh: 'https://github.com/Doremon-tech-svg/ComplainceOS', xray: { type: 'multi-agent', nodes: ['ARIA', 'VEDA', 'SCOUT', 'PATHWAY', 'SENTINEL', 'DB', 'Cache'] } },
-  { id: '03', name: 'Healthcare Ecosystem', tag: 'TOP 10', status: 'live', desc: 'Production-grade hackathon project. 5 AI agents, blockchain consent (Solidity+Hardhat), XGBoost+SHAP fall risk prediction, Telegram alerts, role-based UI with 11 color-coded portals.', tech: ['React', 'FastAPI', 'XGBoost', 'SHAP', 'Solidity', 'Hardhat', 'ethers.js'], stat: 'Top 10 · CodeWizards (100+ teams)', color: '#F59E0B', link: '#', gh: 'https://github.com/Doremon-tech-svg/codewizrds_deploy/', xray: { type: 'microservices', nodes: ['Triage NLP', 'Bed Flow', 'Nurse AI', 'Decision', 'Sustainability', 'Blockchain'] } },
-  { id: '04', name: 'DeepTrust AI', tag: 'AI + WEB3', status: 'live', desc: 'Deepfake detection using ViT model (Hugging Face) + blockchain-hashed proof on Ethereum Sepolia. Upload a face → get AI verdict → record proof on-chain via MetaMask.', tech: ['Python', 'Flask', 'ViT Model', 'Solidity', 'Web3.js', 'MetaMask', 'Sepolia'], stat: 'ViT + Blockchain proof', color: '#EF4444', link: 'https://deeptrust-ai-eta.vercel.app/', gh: 'https://github.com/Doremon-tech-svg/Deeptrust_AI', xray: { type: 'AI+blockchain', nodes: ['Image Upload', 'ViT Inference', 'Verdict', 'MetaMask', 'Sepolia', 'Audit Log'] } },
-  { id: '05', name: 'LevelUp Journal', tag: 'LIVE', status: 'live', desc: 'Developer journaling app. Mood tracking, mind state, code progress log, smart reflection suggestions, animated particle background. Flask + SQLite, fully local.', tech: ['Python', 'Flask', 'SQLite', 'SQLAlchemy', 'HTML/CSS', 'Particles.js'], stat: 'Deployed on Render', color: '#60A5FA', link: 'https://levelup-journal.onrender.com', gh: 'https://github.com/Doremon-tech-svg/levelup-journal', xray: { type: 'full-stack', nodes: ['Flask', 'SQLite', 'Jinja2', 'Particles.js', 'CRUD', 'OCR'] } },
-  { id: '06', name: 'Weather Vibes', tag: 'LIVE', status: 'live', desc: 'Animated weather app. Real-time weather by city, live local time, day/night mode, gradient backgrounds. Tomorrow.io + OpenCage APIs.', tech: ['HTML5', 'CSS3', 'JavaScript', 'Tomorrow.io API', 'OpenCage API'], stat: 'Live site · API-powered', color: '#34D399', link: 'https://doremon-tech-svg.github.io/weather-vibes/', gh: 'https://github.com/Doremon-tech-svg/weather-vibes', xray: { type: 'frontend', nodes: ['HTML/CSS', 'Vanilla JS', 'Tomorrow.io', 'OpenCage', 'Geolocation', 'Animations'] } },
-  { id: '07', name: 'Swachh Connect', tag: 'SIH 2025', status: 'live', desc: 'Waste management platform for SIH Hackathon. Citizens report waste, do training modules, earn certificates. Admin dashboard with stats. Flask + SQLite.', tech: ['Flask', 'SQLite', 'HTML/CSS', 'JavaScript', 'Jinja2'], stat: 'SIH Hackathon 2025', color: '#9D72FF', link: '#', gh: 'https://github.com/Doremon-tech-svg/Swachh-Connect', xray: { type: 'civic-tech', nodes: ['Flask', 'SQLite', 'Jinja2', 'File Upload', 'Admin Panel', 'Certs'] } },
-  { id: '08', name: 'Group Expense App', tag: 'WIP', status: 'wip', desc: 'Splitwise-like MVP with approval-based expenses, full audit trail, JWT auth in HTTP-only cookies. Prisma + PostgreSQL. Approvals and ledger in progress.', tech: ['React', 'TypeScript', 'Node.js', 'Express', 'Prisma', 'PostgreSQL', 'TanStack Query'], stat: 'MVP in progress', color: '#F59E0B', link: '#', gh: 'https://github.com/Doremon-tech-svg/Expense--tracker', xray: { type: 'full-stack', nodes: ['React', 'Express', 'Prisma', 'PostgreSQL', 'JWT', 'Ledger'] } },
-  { id: '09', name: 'Scholar Connect', tag: 'LIVE', status: 'live', desc: 'Scholarship finder for students. Search, filter, apply guide, document checklist. Pure HTML/CSS/JS frontend.', tech: ['HTML5', 'CSS3', 'JavaScript'], stat: 'Static · Scholarship finder', color: '#10B981', link: '#', gh: 'https://github.com/Doremon-tech-svg/Scholar-Connect', xray: { type: 'frontend', nodes: ['HTML', 'CSS', 'JS', 'Filter', 'Search', 'Static'] } },
-  { id: '10', name: 'Amazon Price Tracker', tag: 'TOOL', status: 'live', desc: 'Paste an Amazon URL → get real-time price. Flask + BeautifulSoup scraper with clean responsive UI.', tech: ['Python', 'Flask', 'BeautifulSoup', 'Requests', 'HTML/CSS'], stat: 'Scraper + Flask', color: '#F59E0B', link: '#', gh: 'https://github.com/Doremon-tech-svg/amazon-price-tracker', xray: { type: 'scraper', nodes: ['Flask', 'BeautifulSoup', 'Requests', 'Parser', 'UI', 'Cache'] } },
+  { id: '01', name: 'ClinicalPulseOS', tag: 'FLAGSHIP', status: 'live', desc: 'Multi-tenant hospital operating system. Role-based backend serving 10+ departments across 11 tenants, full RBAC with 10+ locked roles, a dual-engine DB adapter (PostgreSQL/SQLite, zero code changes), and an AI triage pipeline (Groq to Gemini fallback) turning free-text paramedic reports into structured severity scores.', tech: ['React', 'Node.js', 'Express.js', 'PostgreSQL (Supabase)', 'JWT', 'REST API', 'Groq/Gemini'], stat: '11 tenants · 8+ REST modules', color: '#7C3AED', link: 'https://clinicalpulseos.vercel.app', gh: 'https://github.com/Doremon-tech-svg', xray: { type: 'multi-tenant backend', nodes: ['Auth', 'RBAC', 'PostgreSQL/SQLite', 'Triage AI', 'Modules x8', 'Supabase'] } },
+  { id: '02', name: 'VisionAid', tag: 'ACCESSIBILITY', status: 'live', desc: 'Browser-based navigation assistant for visually impaired users. JWT/bcrypt auth, SQLite-backed REST API for scan history and saved locations, and an on-device object-detection pipeline wired to server-side routing (OSRM) and AI scene-description (Groq, Gemini) with no added server round-trip.', tech: ['Node.js', 'Express.js', 'SQLite', 'JWT', 'ONNX Runtime', 'WebSockets'], stat: 'Real-time, latency-sensitive', color: '#34D399', link: 'https://visionaid-alpha.vercel.app', gh: 'https://github.com/Doremon-tech-svg', xray: { type: 'AI + accessibility', nodes: ['Object Detection', 'OSRM Routing', 'Scene AI', 'WebSockets', 'SQLite', 'JWT'] } },
+  { id: '03', name: 'DeepTrust AI', tag: 'AI + BLOCKCHAIN', status: 'live', desc: 'Deepfake detection with a second layer of trust. A fine-tuned Vision Transformer runs through a Flask inference API, and every verdict gets hashed and recorded on a Solidity smart contract deployed on Ethereum Sepolia, independently verifiable on Etherscan. Recognized as top project at KIET AI + Blockchain Bootcamp.', tech: ['Python', 'Flask', 'ViT (HuggingFace)', 'Solidity', 'Ethers.js', 'Sepolia'], stat: 'Top project · KIET Bootcamp', color: '#EF4444', link: 'https://deeptrust-ai-eta.vercel.app/', gh: 'https://github.com/Doremon-tech-svg/Deeptrust_AI', xray: { type: 'AI + blockchain', nodes: ['Image Upload', 'ViT Inference', 'Verdict', 'MetaMask', 'Sepolia', 'Etherscan'] } },
+  { id: '04', name: 'Group Expense Tracker', tag: 'IN PROGRESS', status: 'wip', desc: 'Approval-based, auditable group expense and settlement ledger for groups of 10 to 20 people, with multi-payer and multi-beneficiary splitting. Normalized Prisma/PostgreSQL schema, HTTP-only cookie JWT auth, role-based permissions.', tech: ['React', 'TypeScript', 'Node.js', 'Express', 'Prisma', 'PostgreSQL', 'JWT'], stat: 'MVP in progress', color: '#F59E0B', link: '#', gh: 'https://github.com/Doremon-tech-svg/Expense--tracker', xray: { type: 'full-stack', nodes: ['React', 'Express', 'Prisma', 'PostgreSQL', 'JWT', 'Ledger'] } },
+  { id: '05', name: 'AI HealthMate', tag: 'HACKATHON', status: 'live', desc: 'Unified AI health platform: diabetes ML prediction (XGBoost) + mental health assessment. Firebase auth, FastAPI backend, Recharts dashboards.', tech: ['React', 'FastAPI', 'Firebase', 'Scikit-learn', 'TailwindCSS'], stat: 'ML + mental health unified', color: '#10B981', link: 'https://ai-healthmate.vercel.app/', gh: 'https://github.com/Doremon-tech-svg/ai-healthmate', xray: { type: 'full-stack', nodes: ['React UI', 'Firebase Auth', 'FastAPI', 'XGBoost', 'Firestore', 'Charts'] } },
+  { id: '06', name: 'ComplianceOS', tag: 'PERSONAL', status: 'live', desc: 'AI-powered platform concept for Indian MSMEs. 5 AI agents (ARIA, VEDA, SCOUT, PATHWAY, SENTINEL) for compliance, scheme discovery, document OCR, portal navigation. Multi-agent LLM orchestration.', tech: ['React', 'FastAPI', 'PostgreSQL', 'MongoDB', 'Redis', 'Groq LLM'], stat: '5 AI agents · MSME platform', color: '#9D72FF', link: '#', gh: 'https://github.com/Doremon-tech-svg/ComplainceOS', xray: { type: 'multi-agent', nodes: ['ARIA', 'VEDA', 'SCOUT', 'PATHWAY', 'SENTINEL', 'DB'] } },
+  { id: '07', name: 'Healthcare Ecosystem', tag: 'HACKATHON', status: 'live', desc: 'Built in under 48 hours for a hackathon. 5 AI agents, blockchain consent (Solidity + Hardhat), XGBoost + SHAP fall-risk prediction, Telegram alerts, 11 role-based portals.', tech: ['React', 'FastAPI', 'XGBoost', 'SHAP', 'Solidity', 'Hardhat'], stat: 'Top 10 · CodeWizards hackathon', color: '#F59E0B', link: '#', gh: 'https://github.com/Doremon-tech-svg/codewizrds_deploy/', xray: { type: 'microservices', nodes: ['Triage NLP', 'Bed Flow', 'Nurse AI', 'Decision', 'Sustainability', 'Blockchain'] } },
+  { id: '08', name: 'LevelUp Journal', tag: 'PERSONAL', status: 'live', desc: 'Developer journaling app built for myself. Mood tracking, code progress log, reflection prompts, animated particle background. Flask + SQLite, fully local.', tech: ['Python', 'Flask', 'SQLite', 'SQLAlchemy'], stat: 'Deployed on Render', color: '#60A5FA', link: 'https://levelup-journal.onrender.com', gh: 'https://github.com/Doremon-tech-svg/levelup-journal', xray: { type: 'full-stack', nodes: ['Flask', 'SQLite', 'Jinja2', 'Particles.js', 'CRUD', 'OCR'] } },
+  { id: '09', name: 'Weather Vibes', tag: 'WEEKEND', status: 'live', desc: 'Weekend project. Real-time weather by city, live local time, day/night mode, gradient backgrounds. Tomorrow.io + OpenCage APIs.', tech: ['HTML5', 'CSS3', 'JavaScript', 'Tomorrow.io API'], stat: 'Live site · API-powered', color: '#34D399', link: 'https://doremon-tech-svg.github.io/weather-vibes/', gh: 'https://github.com/Doremon-tech-svg/weather-vibes', xray: { type: 'frontend', nodes: ['HTML/CSS', 'Vanilla JS', 'Tomorrow.io', 'OpenCage', 'Geolocation', 'Animations'] } },
+  { id: '10', name: 'Swachh Connect', tag: 'SIH 2025', status: 'live', desc: 'Waste management platform built for SIH Hackathon. Citizens report waste, complete training modules, earn certificates. Admin dashboard with stats.', tech: ['Flask', 'SQLite', 'HTML/CSS', 'JavaScript'], stat: 'SIH Hackathon 2025', color: '#F59E0B', link: '#', gh: 'https://github.com/Doremon-tech-svg/Swachh-Connect', xray: { type: 'civic-tech', nodes: ['Flask', 'SQLite', 'Jinja2', 'File Upload', 'Admin Panel', 'Certs'] } },
+  { id: '11', name: 'Scholar Connect', tag: 'STATIC', status: 'live', desc: 'Scholarship finder for students. Search, filter, apply guide, document checklist. Pure HTML/CSS/JS frontend.', tech: ['HTML5', 'CSS3', 'JavaScript'], stat: 'Static · scholarship finder', color: '#10B981', link: '#', gh: 'https://github.com/Doremon-tech-svg/Scholar-Connect', xray: { type: 'frontend', nodes: ['HTML', 'CSS', 'JS', 'Filter', 'Search', 'Static'] } },
+  { id: '12', name: 'Amazon Price Tracker', tag: 'TOOL', status: 'live', desc: 'Paste an Amazon URL, get the price. Flask + BeautifulSoup scraper with a clean responsive UI.', tech: ['Python', 'Flask', 'BeautifulSoup', 'Requests'], stat: 'Scraper + Flask', color: '#F59E0B', link: '#', gh: 'https://github.com/Doremon-tech-svg/amazon-price-tracker', xray: { type: 'scraper', nodes: ['Flask', 'BeautifulSoup', 'Requests', 'Parser', 'UI', 'Cache'] } },
 ];
 function XRayArch({ project }) {
   return (
@@ -622,13 +624,13 @@ function XRayArch({ project }) {
 }
 function Projects({ theme }) {
   const [open, setOpen] = useState(null);
-  const [show, setShow] = useState(5);
+  const [show, setShow] = useState(4);
   const isX = theme === 'xray';
   return (
     <section id="work" style={{ padding: '120px 10%', position: 'relative', zIndex: 10 }}>
       <SL>01 / ACTIVE STRUCTURES</SL>
       <ST>Built &amp; Shipped</ST>
-      <p style={{ fontSize: 13, color: 'var(--muted)', marginTop: 10, marginBottom: 40, fontFamily: 'JetBrains Mono,monospace', letterSpacing: '.06em' }}>Click any project to expand. Enable X-RAY to see architecture.</p>
+      <p style={{ fontSize: 13, color: 'var(--muted)', marginTop: 10, marginBottom: 40, fontFamily: 'JetBrains Mono,monospace', letterSpacing: '.06em' }}>Top 4 are on my resume. Click any project to expand. Enable X-RAY to see architecture.</p>
       <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
         {PROJECTS.slice(0, show).map((p, i) => {
           const isO = open === p.id;
@@ -678,8 +680,8 @@ function Projects({ theme }) {
 /* ═══════════════════════════════════════════════════
    TECH GRAPH (D3)
 ═══════════════════════════════════════════════════ */
-const NODES = [{ id: 'Python', domain: 'ai', yrs: 3 }, { id: 'React', domain: 'frontend', yrs: 2 }, { id: 'Flask', domain: 'backend', yrs: 2 }, { id: 'JavaScript', domain: 'frontend', yrs: 3 }, { id: 'HTML/CSS', domain: 'frontend', yrs: 3 }, { id: 'C/C++', domain: 'systems', yrs: 2 }, { id: 'SQLite', domain: 'backend', yrs: 2 }, { id: 'Git', domain: 'tools', yrs: 3 }, { id: 'Node.js', domain: 'backend', yrs: 1 }, { id: 'Solidity', domain: 'web3', yrs: 1 }, { id: 'MongoDB', domain: 'backend', yrs: 1 }, { id: 'FastAPI', domain: 'backend', yrs: 1 }];
-const LINKS = [{ s: 'Python', t: 'Flask', w: 4 }, { s: 'Python', t: 'FastAPI', w: 3 }, { s: 'React', t: 'JavaScript', w: 4 }, { s: 'React', t: 'HTML/CSS', w: 3 }, { s: 'Flask', t: 'SQLite', w: 3 }, { s: 'JavaScript', t: 'Node.js', w: 2 }, { s: 'Git', t: 'Python', w: 2 }, { s: 'Git', t: 'React', w: 2 }, { s: 'Solidity', t: 'JavaScript', w: 2 }, { s: 'Node.js', t: 'MongoDB', w: 2 }, { s: 'FastAPI', t: 'MongoDB', w: 2 }, { s: 'C/C++', t: 'Python', w: 2 }];
+const NODES = [{ id: 'Node.js', domain: 'backend', yrs: 2 }, { id: 'Express', domain: 'backend', yrs: 2 }, { id: 'PostgreSQL', domain: 'backend', yrs: 2 }, { id: 'React', domain: 'frontend', yrs: 2 }, { id: 'JavaScript', domain: 'frontend', yrs: 3 }, { id: 'TypeScript', domain: 'frontend', yrs: 1 }, { id: 'Python', domain: 'ai', yrs: 3 }, { id: 'Flask', domain: 'backend', yrs: 2 }, { id: 'Prisma', domain: 'backend', yrs: 1 }, { id: 'Git', domain: 'tools', yrs: 3 }, { id: 'Solidity', domain: 'web3', yrs: 1 }, { id: 'Docker', domain: 'tools', yrs: 1 }];
+const LINKS = [{ s: 'Node.js', t: 'Express', w: 4 }, { s: 'Express', t: 'PostgreSQL', w: 4 }, { s: 'Express', t: 'Prisma', w: 3 }, { s: 'React', t: 'JavaScript', w: 4 }, { s: 'React', t: 'TypeScript', w: 3 }, { s: 'Python', t: 'Flask', w: 4 }, { s: 'Git', t: 'Node.js', w: 2 }, { s: 'Git', t: 'React', w: 2 }, { s: 'Solidity', t: 'JavaScript', w: 2 }, { s: 'Docker', t: 'Node.js', w: 2 }, { s: 'Docker', t: 'Flask', w: 2 }, { s: 'Prisma', t: 'PostgreSQL', w: 3 }];
 const DC = { ai: '#9D72FF', frontend: '#34D399', backend: '#60A5FA', systems: '#F59E0B', web3: '#EF4444', tools: '#6B7280' };
 function TechGraph({ theme }) {
   const svgRef = useRef(null), wrapRef = useRef(null), simRef = useRef(null);
@@ -744,10 +746,10 @@ function TechGraph({ theme }) {
 ═══════════════════════════════════════════════════ */
 const GOALS = [
   { n: '01', t: 'Land first real freelance project', d: 'Something that pays, ships, and stays alive in production. Not a dummy project.', pct: 35 },
-  { n: '02', t: 'Ship ComplianceOS to 100 MSMEs', d: 'Make it real — actual users, actual compliance problems solved. Revenue > 0.', pct: 20 },
+  { n: '02', t: 'Get selected for MLH Fellowship', d: 'Contribute to a major open source project as part of a real fellowship cohort.', pct: 20 },
   { n: '03', t: 'Contribute to a major open source project', d: 'Meaningful PRs merged into something people actually use. Not just README fixes.', pct: 45 },
   { n: '04', t: 'Master DSA & system design', d: 'Get to the point where I can walk into any tech interview with confidence.', pct: 30 },
-  { n: '05', t: 'Build something people talk about', d: 'One project that gets traction on its own — not by pitching, just by being genuinely useful.', pct: 10 },
+  { n: '05', t: 'Build something people talk about', d: 'One project that gets traction on its own, not by pitching, just by being genuinely useful.', pct: 10 },
 ];
 function Vision() {
   return (
@@ -778,7 +780,7 @@ function Vision() {
    TICKER (scrolling marquee)
 ═══════════════════════════════════════════════════ */
 function Ticker() {
-  const items = ['Python · Flask · React · FastAPI · Solidity · SQLite · PostgreSQL · MongoDB · XGBoost · ViT · LangChain · Groq · Hardhat · Web3 · TailwindCSS · Framer Motion · D3.js · Recharts · Firebase · Git ·'];
+  const items = ['Node.js · Express · PostgreSQL · React · TypeScript · Prisma · Python · Flask · SQLite · MongoDB · Docker · JWT · REST APIs · Solidity · Ethers.js · TailwindCSS · Git ·'];
   const txt = items.join(' ');
   return (
     <div style={{ borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)', padding: '14px 0', overflow: 'hidden', position: 'relative', zIndex: 10 }}>
@@ -1060,7 +1062,7 @@ function Contact() {
       <ST>Ring the Bell</ST>
       <div style={{ marginTop: 48, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48 }} className="g1">
         <div>
-          <p style={{ fontSize: 14, color: 'var(--muted)', lineHeight: 1.9, marginBottom: 28 }}>Open to collabs, hackathon teams, freelance projects, internships, or just geeking out about AI/Web3. I reply within 24h.</p>
+          <p style={{ fontSize: 14, color: 'var(--muted)', lineHeight: 1.9, marginBottom: 28 }}>Open to collabs, hackathon teams, freelance projects, internships, or just talking full-stack and backend architecture. I reply within 24h.</p>
           {[
             { l: 'EMAIL', v: ME.email, href: `mailto:${ME.email}` },
             { l: 'GITHUB', v: 'github.com/Doremon-tech-svg', href: ME.github },
@@ -1135,11 +1137,11 @@ function Contact() {
 ═══════════════════════════════════════════════════ */
 const LOG_CMDS = [
   { cmd: 'ls -la projects/', out: PROJECTS.map(p => `drwxr-xr-x  ${p.name.padEnd(22)}[${p.status.toUpperCase()}] ${p.stat}`).join('\n') },
-  { cmd: 'cat stack.json', out: JSON.stringify({ languages: ['Python', 'JavaScript', 'C/C++'], frontend: ['React', 'HTML/CSS', 'TailwindCSS'], backend: ['Flask', 'FastAPI', 'Node.js'], databases: ['SQLite', 'MongoDB', 'PostgreSQL'], ai: ['Scikit-learn', 'ViT', 'XGBoost', 'LangChain'], web3: ['Solidity', 'Hardhat', 'ethers.js'], tools: ['Git', 'Docker'] }, null, 2) },
-  { cmd: 'git log --oneline -6', out: `3f9e1c feat: deepfake detector with blockchain proof\n8d2b4a feat: ARIA onboarding agent for ComplianceOS\na1c3f8 feat: XGBoost+SHAP fall risk predictor\n7a9d3b feat: LevelUp Journal v1 shipped\ne4c8f2 feat: weather vibes API integration\n2b1d9a init: portfolio v5.3` },
-  { cmd: 'cat achievements.md', out: `# Achievements\n- Top 10 · CodeWizards Hackathon (100+ teams)\n- Qualified · Dataverse Hackathon (final round)\n- GSSoC Open Source Contributor\n- 5+ Hackathons participated\n- CoE AI Skills Lab · Blockchain Member\n- GDG on Campus · ML Member\n- DevUp KIET · Web Dev Member` },
-  { cmd: 'whoami', out: `Divyank Richhariya\nB.Tech CSE (AIML) · KIET · 2029\nFull Stack Developer & AI Tinkerer\n${ME.location}` },
-  { cmd: 'uptime', out: `System up 693 days. 14+ projects shipped. Currently building.` },
+  { cmd: 'cat stack.json', out: JSON.stringify({ backend: ['Node.js', 'Express.js', 'Flask', 'REST APIs', 'JWT'], frontend: ['React', 'TypeScript', 'TailwindCSS'], databases: ['PostgreSQL', 'MySQL', 'MongoDB', 'SQLite', 'Prisma'], tools: ['Docker', 'Git', 'Vercel', 'Render'], web3: ['Solidity (learning)', 'Ethers.js'] }, null, 2) },
+  { cmd: 'git log --oneline -6', out: `3f9e1c feat: deepfake detector with blockchain proof\n8d2b4a feat: group expense tracker approval flow\na1c3f8 feat: VisionAid scene-description pipeline\n7a9d3b feat: ClinicalPulseOS AI triage integration\ne4c8f2 feat: dual-engine DB adapter shipped\n2b1d9a init: portfolio v5.3` },
+  { cmd: 'cat achievements.md', out: `# Achievements\n- Top project · KIET AI + Blockchain Bootcamp\n- AWS Certified AI Practitioner\n- CS50x · Harvard University\n- GSSoC Open Source Contributor\n- GDG on Campus · ML Domain Member\n- DevUp KIET · ML Domain Member` },
+  { cmd: 'whoami', out: `Divyank Richhariya\nB.Tech CSE (AIML) · KIET · 2029\nFull-Stack Developer (PERN)\n${ME.location}` },
+  { cmd: 'uptime', out: `System up 693 days. 4 resume projects shipped. Currently building.` },
   { cmd: 'help', out: 'Commands: ls -la projects/ | cat stack.json | git log --oneline -6 | cat achievements.md | whoami | uptime\nTip: Tab to autocomplete, ↑↓ for history' },
 ];
 function BuildLog({ theme }) {
